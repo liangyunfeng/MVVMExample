@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="progress"
+            type="com.github.liangyunfeng.mvvm.two_way_data_binding2.Progress" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.github.liangyunfeng.mvvm.two_way_data_binding2.MySeekBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            app:myprogress="@={progress.porgress}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{String.valueOf(progress.porgress)}"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="50dp" />
+    </LinearLayout>
+</layout>

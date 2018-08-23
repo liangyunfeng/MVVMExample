@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.github.liangyunfeng.mvvm.bindingmethod.Util" />
+
+        <variable
+            name="user"
+            type="com.github.liangyunfeng.mvvm.bindingmethod.model.User" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@={user.content}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Util.displayPassowrdText(user.content)}" />
+
+        <com.github.liangyunfeng.mvvm.bindingmethod.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.content}"
+            app:mytoast="@{user.content}" />
+    </LinearLayout>
+</layout>
